@@ -22,6 +22,7 @@ public class start extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         System.out.println("客户端发起了get请求");
         String uid = req.getParameter("uid");
         String token = req.getParameter("token");
@@ -49,8 +50,9 @@ public class start extends HttpServlet {
                 System.out.println(result.getString("username"));
             }
         } catch (Exception e) {
-            System.out.println(e);
+
         }
+
 
     }
 
