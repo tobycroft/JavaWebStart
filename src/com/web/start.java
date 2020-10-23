@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.sql.*;
 
 
-@WebServlet(name = "start", urlPatterns = "/start")
+@WebServlet(name = "start1", urlPatterns = "/start/aa")
 
 public class start extends HttpServlet {
 
