@@ -50,7 +50,7 @@ public class start extends HttpServlet {
                 System.out.println(result.getString("username"));
             }
         } catch (Exception e) {
-
+            System.out.println(e);
         }
 
 
