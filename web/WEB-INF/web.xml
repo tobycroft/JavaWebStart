@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet>
-        <servlet-name>start</servlet-name>
-        <servlet-class>com.web.start</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>start</servlet-name>
-        <url-pattern>/start</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>start</servlet-name>-->
+<!--        <servlet-class>com.web.start</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>start</servlet-name>-->
+<!--        <url-pattern>/start</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 </web-app>
