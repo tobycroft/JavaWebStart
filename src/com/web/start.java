@@ -17,7 +17,12 @@ public class start extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("客户端发起了get请求");
-        super.doGet(req, resp);
 
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("已经被销毁");
+        super.destroy();
     }
 }
