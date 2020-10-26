@@ -1,5 +1,12 @@
 package com.web;
 
+import com.mysql.cj.xdevapi.JsonArray;
+import com.mysql.cj.xdevapi.JsonParser;
+import com.mysql.cj.xdevapi.JsonString;
+import com.oracle.javafx.jmx.json.JSONReader;
+import com.oracle.javafx.jmx.json.JSONWriter;
+import jdk.nashorn.internal.parser.JSONParser;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,13 +37,23 @@ public class start extends HttpServlet {
         System.out.println(uid);
         System.out.println(token);
 
-        db(uid);
+//        db(uid);
 
         PrintWriter pw = resp.getWriter();
-        pw.write("123123123");
+        ResultSet result = db(uid);
+
+        try {
+            while (result.next()) {
+                pw.write(result.getString("username"));
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
-    public static void db(String uid) {
+    public static ResultSet db(String uid) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://192.168.1.11:3306/javachat_master";
@@ -46,13 +63,14 @@ public class start extends HttpServlet {
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setObject(1, uid);
             ResultSet result = pre.executeQuery();
-            while (result.next()) {
-                System.out.println(result.getString("username"));
-            }
+            return result;
+//            while (result.next()) {
+//                System.out.println(result.getString("username"));
+//            }
         } catch (Exception e) {
             System.out.println(e);
         }
-
+        return null;
 
     }
 
